@@ -10,6 +10,8 @@ public class BookController {
 	@GetMapping("/index")
 	public String addBook() {
 		
+		return "bookWelcome";
+		
 	}
 
 }
