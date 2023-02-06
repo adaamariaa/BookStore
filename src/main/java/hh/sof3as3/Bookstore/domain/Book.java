@@ -1,11 +1,22 @@
 package hh.sof3as3.Bookstore.domain;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Book {
-	 public String title;
-	 public String author;
-	 public Integer year;
-	 public String isbn;
-	 public double price;
+		@Id
+		@GeneratedValue(strategy = GenerationType.AUTO)
+		public Long id;
+		public String title;
+		public String author;
+		@Column(name="publyear")
+		public Integer year;
+		public String isbn;
+		public double price;
 	 
 	public Book(String title, String author, Integer year, String isbn, double price) {
 		super();
@@ -16,13 +27,16 @@ public class Book {
 		this.price = price;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public Book() {
-		super();
-		this.title = null;
-		this.author = null;
-		this.year = null;
-		this.isbn = null;
-		this.price = 0.00;
+		
 	}
 
 	public String getTitle() {
@@ -67,7 +81,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "title=" + title + ", author=" + author + ", year=" + year + ", isbn=" + isbn + ", price=" + price;
+		return "id=" + id + "title=" + title + ", author=" + author + ", year=" + year + ", isbn=" + isbn + ", price=" + price;
 	}
 	
 	
