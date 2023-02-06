@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import hh.sof3as3.Bookstore.domain.Book;
@@ -24,14 +25,19 @@ public class BookController {
 	
 	@GetMapping("/add")
 	public String addBook(Model model){
-	 model.addAttribute("student", new Book());
-	 return "addstudent";
+	 model.addAttribute("book", new Book());
+	 return "addbook";
 	}
 	
 	@PostMapping("/save")
 	public String save(Book book){
 	 repository.save(book);
 	 return "redirect:booklist";
+	}
+	
+	@GetMapping("/delete/{id}")public String deleteBook(@PathVariable("id") Long bookId, Model model){
+		repository.deleteById(bookId);
+	 return "redirect:../booklist";
 	}
 
 }

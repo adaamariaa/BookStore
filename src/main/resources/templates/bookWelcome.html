@@ -30,7 +30,10 @@
 		<td th:text="${books.isbn}"></td>
 		<td></td>
 		<td th:text="${books.price}"></td>
+		<td><a th:href="@{/delete/{id}(id=${books.id})}">Delete</a></td>
+		
 	</tr>
 	</table>
+	<a href="/add" class="btn btn-primary">Add Book</a>
 </body>
 </html>
