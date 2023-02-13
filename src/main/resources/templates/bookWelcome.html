@@ -6,9 +6,9 @@
 <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/css/bootstrap.min.css}" />
 </head>
 <body>
-	<h1>Books</h1>
 
-	<p>Welcome to the Book Store!</p>
+	<h1>Welcome to the Book Store!</h1>
+	<h4>Books</h4>
 	
 	<table class="table table-striped">
 	<tr>
@@ -20,6 +20,9 @@
 		<th>ISBN</th>
 		<th></th>
 		<th>Price</th>
+		<th>Category</th>
+		<th></th>
+		<th></th>
 		
 	</tr>
 		<tr th:each = "books : ${books}">
@@ -31,6 +34,7 @@
 		<td th:text="${books.isbn}"></td>
 		<td></td>
 		<td th:text="${books.price}"></td>
+		<td th:text="${books.category.name}"></td>
 		<td><a th:href="@{/delete/{id}(id=${books.id})}" class="btn btn-danger">Delete</a></td>
 		<td><a th:href="@{/edit/{id}(id=${books.id})}">Edit</a></td>
 	</tr>
