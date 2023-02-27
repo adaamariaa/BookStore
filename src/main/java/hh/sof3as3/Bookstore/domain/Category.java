@@ -2,7 +2,6 @@ package hh.sof3as3.Bookstore.domain;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
@@ -19,7 +18,7 @@ public class Category {
 	public Long categoryid;
 	public String name;
 	
-	@JsonIgnore
+	@JsonIgnoreProperties("category")
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
 	private List <Book> books;
 
