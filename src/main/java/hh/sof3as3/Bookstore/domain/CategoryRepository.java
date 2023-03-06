@@ -1,10 +1,15 @@
 package hh.sof3as3.Bookstore.domain;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 
 
 public interface CategoryRepository  extends CrudRepository<Category, Long>{
-
+		
+	List <Book> findById(long id);
+	List <Book> findByName(String name);
+	
 	}
 
 
