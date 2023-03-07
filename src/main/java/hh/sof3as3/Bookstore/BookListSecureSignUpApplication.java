@@ -38,8 +38,8 @@ public class BookListSecureSignUpApplication {
 				brepository.save(new Book("Harry Potter ja Azkabanin vanki", "J.K. Rowling", 2020, "9789520426415", 24.95, crepository.findByName("Fantasy").get(0)));	
 				
 				// Create users: admin/admin user/user
-				User user1 = new User("user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER");
-				User user2 = new User("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN");
+				User user1 = new User("ella123", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "ella.bellanen@mail.com", "USER");
+				User user2 = new User("kille233", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "kille.kallonen@mail.fi", "ADMIN");
 				urepository.save(user1);
 				urepository.save(user2);
 				
