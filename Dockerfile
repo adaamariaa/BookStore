@@ -10,6 +10,6 @@ RUN mvn -f /home/app/pom.xml clean package
 # Jar Package
 #
 FROM eclipse-temurin:17-jre-focal
-COPY --from=build /home/app/target/booklist-0.0.1-SNAPSHOT.jar /usr/local/lib/booklist.jar
+COPY --from=build /home/app/target/BookStore-0.0.1-SNAPSHOT.jar /usr/local/lib/bookStore.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/usr/local/lib/booklist.jar"]
+ENTRYPOINT ["java", "-jar", "/usr/local/lib/bookStore.jar"]
